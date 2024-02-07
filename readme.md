@@ -1,30 +1,33 @@
-# VGG Model Training and Evaluation
+# ResNet-9 Model Training and Evaluation
 
-This repository provides tools for training and evaluating VGG models. It includes scripts to train VGG models on a specific dataset and then evaluate/test the model.
+This repository provides tools for training and evaluating ResNet-9 models. It includes scripts to train ResNet-9 model  on a CIFAR-10 dataset and then evaluate/test the model.
+
+No pre-learning model was used.
 
 ## Table of Contents
+1. [Model](#model)
+2. [Setup](#setup)
+3. [Usage](#usage)
+4. [Result](#result)
 
-1. [Setup](#setup)
-2. [Usage](#usage)
+## Model
+![Layers](https://github.com/minvamos/ResNet9-CIFAR-10/assets/122091776/3ed83ff9-a747-4002-913e-b930e111e04a)
+
+The above model is implemented on [**Resnet.py**](https://github.com/minvamos/ResNet9-CIFAR-10/blob/main/src/resnet.py). It has fewer layers and is lighter than the regular Resnet model.
 
 ## Setup 
 
-**Note:** This is only for GPU
-1. Create Python 3.10 Environment
-```bash
-conda create -n [environment name] python=3.10 -y
-conda activate [environment name]
-```
-2. Clone this repository.
+**Note:** This repository ran in an Apple Silicon MacOS environment. So it is 'mps' based, it does not run in a GPU environment.
+
+1. Clone this repository.
 
 ```bash
-git clone https://github.com/ia-gu/jikken3_vision_recognition
-# If you want to clone VGG_Demo (for jetson) at the same time, you can use below instead of above.
-# git clone --recurse-submodules https://github.com/ia-gu/jikken3_vision_recognition
-cd jikken3_vision_recognition
+git clone https://github.com/minvamos/ResNet9-CIFAR-10.git
+
+cd ResNet9-CIFAR-10
 ```
 
-3. Install required packages.
+2. Install required packages.
 
 ```bash
 pip install -r requirements.txt
@@ -36,18 +39,9 @@ pip install -r requirements.txt
 2. Train and test the model.
 
 ```bash
-python main.py
+python main_ResNet9.py
 ```
 
-3. (Optional) Only test the model.
-
-```bash
-cd src
-python test.py
-```
-
-4. Do online demo
-
-**Note:** This is only for jetson.
-
-Access to [jetson_camera_demo](https://github.com/s-ito0621/VGG_Demo)
+## Result 
+![graph](https://github.com/minvamos/ResNet9-CIFAR-10/assets/122091776/aeae9483-28fc-4aa8-a758-16aea7011ace)
+Running on three random seeds, with an accuracy average of 90.13%
