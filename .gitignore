@@ -1,0 +1,6 @@
+*.png
+*.pth
+cifar/
+train_data/
+test_data_same/
+test_data_other/
